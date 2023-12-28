@@ -18,8 +18,6 @@ c = (
     .encode(x='Motor control', y=alt.Y('Physical Characteristics', scale=alt.Scale(reverse=True)), color="Sport")
 )
 
-
-
 with col1:
     option = st.selectbox(
         'Select your sport', df.Sport, index=26
@@ -111,7 +109,7 @@ if sport_1 and sport_2:
     st.pyplot(fig)
 
 # Motor Control
-st.sub('Motor Control Characteristics')
+st.subheader('Motor Control Characteristics')
 if sport_1 and sport_2:
     # Filter the data for the selected sports and only the physical characteristics
     sport_1_data = data[data['Sport'] == sport_1][motor_control].mean(axis=0)
